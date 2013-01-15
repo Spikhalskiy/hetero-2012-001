@@ -79,8 +79,8 @@ int main(int argc, char ** argv) {
 
     wbTime_start(GPU, "Allocating GPU memory.");
     //@@ Allocate GPU memory here
-    wbCheck(cudaMalloc(&deviceInput, numInputElements * sizeof(float)));
-    wbCheck(cudaMalloc(&deviceOutput, numOutputElements * sizeof(float)));  
+    wbCheck(cudaMalloc((void**)&deviceInput, numInputElements * sizeof(float)));
+    wbCheck(cudaMalloc((void**)&deviceOutput, numOutputElements * sizeof(float)));  
       
     wbTime_stop(GPU, "Allocating GPU memory.");
 
